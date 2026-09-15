@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>อิฐ หิน ดิน ทราย</title>
+<meta name="description" content="ผู้จัดจำหน่ายวัสดุก่อสร้างและผู้รับเหมางานภาครัฐ — อิฐ หิน ดิน ทราย ปูนซีเมนต์ และงานก่อสร้างสาธารณูปโภค">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --char:#1A1E1B;
+    --char-2:#252A26;
+    --green:#1E5237;
+    --green-2:#2C6A47;
+    --green-br:#3E8E5A;
+    --sand:#C39A54;
+    --sand-soft:#E4C98F;
+    --paper:#F3F1EA;
+    --paper-2:#EAE7DD;
+    --surface:#FFFFFF;
+    --ink:#20241F;
+    --ink-soft:#565B54;
+    --line:#DBD7CB;
+    --line-strong:#C9C4B4;
+    --gray:#6E736E;
+    --shadow:0 1px 2px rgba(26,30,27,.05), 0 12px 30px -18px rgba(26,30,27,.35);
+    --shadow-lift:0 2px 6px rgba(26,30,27,.08), 0 24px 48px -24px rgba(26,30,27,.45);
+    --r:14px;
+    --r-sm:9px;
+    --maxw:1180px;
+    --font-d:"Kanit",system-ui,sans-serif;
+    --font-b:"Sarabun",system-ui,sans-serif;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --char:#0F120F;
+      --char-2:#161A16;
+      --green:#3E8E5A;
+      --green-2:#4CA267;
+      --green-br:#63BE80;
+      --sand:#D6AF6A;
+      --sand-soft:#E4C98F;
+      --paper:#12150F;
+      --paper-2:#191D16;
+      --surface:#1B1F19;
+      --ink:#E9EBE3;
+      --ink-soft:#A5AC9F;
+      --line:#2C322A;
+      --line-strong:#3A4136;
+      --gray:#9AA096;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -18px rgba(0,0,0,.7);
+      --shadow-lift:0 2px 8px rgba(0,0,0,.5), 0 28px 56px -24px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --char:#0F120F;
+    --char-2:#161A16;
+    --green:#3E8E5A;
+    --green-2:#4CA267;
+    --green-br:#63BE80;
+    --sand:#D6AF6A;
+    --sand-soft:#E4C98F;
+    --paper:#12150F;
+    --paper-2:#191D16;
+    --surface:#1B1F19;
+    --ink:#E9EBE3;
+    --ink-soft:#A5AC9F;
+    --line:#2C322A;
+    --line-strong:#3A4136;
+    --gray:#9AA096;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -18px rgba(0,0,0,.7);
+    --shadow-lift:0 2px 8px rgba(0,0,0,.5), 0 24px 48px -24px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:78px}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--font-b);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  h1,h2,h3,h4{font-family:var(--font-d);font-weight:600;line-height:1.3;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:22px}
+  .eyebrow{
+    font-family:var(--font-d);font-weight:600;font-size:.82rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--green-2);display:inline-flex;align-items:center;gap:.5em;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--sand);display:inline-block}
+  :focus-visible{outline:3px solid var(--green-br);outline-offset:2px;border-radius:4px}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;gap:20px;height:66px}
+  .brand{display:flex;align-items:center;gap:12px;margin-right:auto;font-family:var(--font-d)}
+  .mark{
+    width:42px;height:42px;border-radius:11px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--green),var(--char-2));box-shadow:var(--shadow);
+  }
+  .mark svg{width:24px;height:24px}
+  .brand b{font-weight:700;font-size:1.06rem;letter-spacing:.01em;line-height:1.1}
+  .brand span{display:block;font-size:.7rem;color:var(--ink-soft);font-family:var(--font-b);letter-spacing:.02em}
+  .nav-links{display:flex;gap:6px;align-items:center}
+  .nav-links a{
+    font-family:var(--font-d);font-weight:500;font-size:.95rem;padding:8px 12px;border-radius:8px;
+    color:var(--ink-soft);transition:.16s;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--paper-2)}
+  .nav-cta{
+    font-family:var(--font-d);font-weight:600;font-size:.95rem;padding:10px 18px;border-radius:10px;
+    background:var(--green);color:#fff;box-shadow:var(--shadow);transition:.16s;
+  }
+  .nav-cta:hover{background:var(--green-2);transform:translateY(-1px)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line-strong);border-radius:9px;padding:9px;cursor:pointer;color:var(--ink)}
+  .menu-btn svg{width:22px;height:22px;display:block}
+  @media(max-width:940px){
+    .nav-links{
+      position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;
+      background:var(--paper);border-bottom:1px solid var(--line);padding:12px 16px 18px;box-shadow:var(--shadow);
+    }
+    .nav-links[hidden]{display:none}
+    .nav-links a{padding:12px 14px;font-size:1.05rem}
+    .nav-links .nav-cta{margin-top:8px;text-align:center}
+    .menu-btn{display:grid;place-items:center}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--char)}
+  .hero-photo{position:absolute;inset:0;background:#0d0f0d url("https://images.pexels.com/photos/28442180/pexels-photo-28442180.jpeg?auto=compress&cs=tinysrgb&w=1600") center 22%/cover}
+  .hero-bg{position:absolute;inset:0;opacity:1}
+  .hero-bg::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(90% 80% at 88% 12%, rgba(62,142,90,.20), transparent 58%),
+      linear-gradient(102deg, rgba(14,18,14,.88) 0%, rgba(14,18,14,.62) 40%, rgba(14,18,14,.32) 70%, rgba(14,18,14,.16) 100%);
+  }
+  .hero-bg svg{position:absolute;inset:0;width:100%;height:100%;opacity:.28}
+  .hero .wrap{position:relative;z-index:2;padding-block:92px 104px;color:#EDEFE9}
+  .hero-inner{max-width:760px}
+  .hero .eyebrow{color:var(--sand-soft)}
+  .hero .eyebrow::before{background:var(--sand)}
+  .hero h1{
+    font-size:clamp(2.4rem,5.6vw,4rem);font-weight:700;color:#fff;margin:20px 0 0;letter-spacing:-.01em;
+  }
+  .hero h1 .accent{color:var(--sand-soft)}
+  .hero-lead{font-size:clamp(1.05rem,2.4vw,1.28rem);color:#C7CCC2;margin-top:22px;max-width:600px;line-height:1.6}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{
+    font-family:var(--font-d);font-weight:600;font-size:1rem;padding:14px 26px;border-radius:11px;
+    display:inline-flex;align-items:center;gap:9px;transition:.17s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-p{background:var(--sand);color:#231a08;box-shadow:0 12px 26px -12px rgba(195,154,84,.7)}
+  .btn-p:hover{background:var(--sand-soft);transform:translateY(-2px)}
+  .btn-g{background:transparent;color:#EDEFE9;border-color:rgba(237,239,233,.34)}
+  .btn-g:hover{border-color:#EDEFE9;background:rgba(237,239,233,.08)}
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:0;
+    border-top:1px solid var(--line);background:var(--line);
+  }
+  .hero-stats .st{background:var(--paper);padding:26px 22px}
+  .hero-stats .st b{font-family:var(--font-d);font-weight:700;font-size:1.9rem;color:var(--green-2);display:block;line-height:1}
+  .hero-stats .st span{font-size:.92rem;color:var(--ink-soft);margin-top:6px;display:block}
+  @media(max-width:720px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- generic section ---------- */
+  section{scroll-margin-top:70px}
+  .band{padding-block:96px}
+  .sec-head{max-width:680px;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin:14px 0 0;letter-spacing:-.01em}
+  .sec-head p{color:var(--ink-soft);margin-top:16px;font-size:1.06rem}
+
+  /* ---------- about ---------- */
+  .about{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .about-copy p+p{margin-top:16px}
+  .about-copy .lead{font-size:1.16rem;color:var(--ink);font-weight:500;font-family:var(--font-d)}
+  .name-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);
+  }
+  .name-card h3{font-size:1.15rem;margin-bottom:4px}
+  .name-card .en{font-size:.85rem;color:var(--gray);letter-spacing:.04em;font-family:var(--font-d)}
+  .decode{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+  .decode>div{text-align:center;padding:14px 6px;border-radius:var(--r-sm);background:var(--paper-2);border:1px solid var(--line)}
+  .decode .th{font-family:var(--font-d);font-weight:600;font-size:1.22rem;color:var(--green-2);line-height:1.2}
+  .decode .roman{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);font-family:var(--font-d);margin-top:2px}
+  .decode .mean{font-size:.86rem;color:var(--ink-soft);margin-top:4px}
+  @media(max-width:820px){.about{grid-template-columns:1fr;gap:34px}}
+
+  /* ---------- pillars ---------- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pillar{
+    position:relative;border-radius:var(--r);padding:34px;color:#EFF2EC;overflow:hidden;
+    min-height:260px;display:flex;flex-direction:column;box-shadow:var(--shadow-lift);
+  }
+  .pillar.mat{background:linear-gradient(to bottom, rgba(20,24,20,.10) 0%, rgba(20,24,20,.40) 42%, rgba(16,19,14,.93) 100%), url("https://images.pexels.com/photos/5125783/pexels-photo-5125783.jpeg?auto=compress&cs=tinysrgb&w=1000") center/cover}
+  .pillar.con{background:linear-gradient(to bottom, rgba(18,22,18,.10) 0%, rgba(20,40,28,.42) 42%, rgba(13,26,18,.93) 100%), url("https://images.pexels.com/photos/33484883/pexels-photo-33484883.jpeg?auto=compress&cs=tinysrgb&w=1000") center/cover}
+  .pillar .pnum{font-family:var(--font-d);font-weight:700;font-size:.86rem;letter-spacing:.16em;opacity:.7}
+  .pillar h3{font-size:1.55rem;margin:12px 0 10px;color:#fff}
+  .pillar p{color:rgba(239,242,236,.82);font-size:1rem}
+  .pillar ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  .pillar li{font-family:var(--font-d);font-weight:500;font-size:.86rem;padding:6px 13px;border-radius:20px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.16)}
+  .pillar .picon{width:54px;height:54px;border-radius:13px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin-bottom:auto}
+  .pillar .picon svg{width:30px;height:30px}
+  .pillar.mat .pnum{color:var(--sand-soft)}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}}
+
+  /* ---------- materials catalog ---------- */
+  .mat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:18px}
+  .mcard{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+    box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column;
+  }
+  .mcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--line-strong)}
+  .mcard .swatch{height:158px;position:relative;display:flex;align-items:flex-end;padding:12px;background-size:cover;background-position:center;background-color:#3a3a34}
+  .mcard .swatch::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.42), transparent 52%)}
+  .mcard .swatch svg{position:relative;z-index:1;width:30px;height:30px;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.65))}
+  .sw-brick{background-image:url("https://images.pexels.com/photos/33160441/pexels-photo-33160441.jpeg?auto=compress&cs=tinysrgb&w=700")}
+  .sw-sand{background-image:url("https://images.pexels.com/photos/13131005/pexels-photo-13131005.jpeg?auto=compress&cs=tinysrgb&w=700")}
+  .sw-rock{background-image:url("https://images.pexels.com/photos/32967189/pexels-photo-32967189.jpeg?auto=compress&cs=tinysrgb&w=700")}
+  .sw-soil{background-image:url("https://images.pexels.com/photos/214045/pexels-photo-214045.jpeg?auto=compress&cs=tinysrgb&w=700")}
+  .sw-cement{background-image:url("https://images.pexels.com/photos/29519165/pexels-photo-29519165.jpeg?auto=compress&cs=tinysrgb&w=700")}
+  .mcard .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .mcard h3{font-size:1.18rem}
+  .mcard .en{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);font-family:var(--font-d);margin-top:2px}
+  .mcard ul{list-style:none;padding:0;margin:14px 0 0;font-size:.94rem;color:var(--ink-soft)}
+  .mcard ul li{padding:6px 0;border-top:1px solid var(--line);display:flex;gap:8px}
+  .mcard ul li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--sand);flex:none;margin-top:8px}
+  @media(max-width:980px){.mat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.mat-grid{grid-template-columns:1fr}}
+
+  /* ---------- gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .gallery figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--paper-2)}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+  .gallery figure:hover img{transform:scale(1.06)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 15px 13px;color:#fff;font-family:var(--font-d);font-weight:500;font-size:.95rem;line-height:1.35;background:linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.30) 60%, transparent)}
+  @media(max-width:820px){.gallery{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.gallery{grid-template-columns:1fr}}
+
+  /* ---------- construction ---------- */
+  .con-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .con-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .con-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:20px;box-shadow:var(--shadow)}
+  .con-item .ci{width:40px;height:40px;border-radius:10px;background:var(--paper-2);display:grid;place-items:center;margin-bottom:12px;color:var(--green-2)}
+  .con-item .ci svg{width:22px;height:22px}
+  .con-item h4{font-size:1.05rem;font-weight:600}
+  .con-item p{font-size:.9rem;color:var(--ink-soft);margin-top:5px}
+  .con-side .eyebrow{color:var(--green-2)}
+  .con-side h2{font-size:clamp(1.7rem,3.4vw,2.35rem);margin:14px 0 16px}
+  .con-side p{color:var(--ink-soft)}
+  .con-side .btn-inline{margin-top:24px;background:var(--green);color:#fff;box-shadow:var(--shadow)}
+  .con-side .btn-inline:hover{background:var(--green-2);transform:translateY(-2px)}
+  @media(max-width:860px){.con-wrap{grid-template-columns:1fr;gap:30px}}
+  @media(max-width:480px){.con-list{grid-template-columns:1fr}}
+
+  /* ---------- strengths ---------- */
+  .why{background:var(--char);color:#E9EBE3}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:#B4BAB0}
+  .why .eyebrow{color:var(--sand-soft)}
+  .why .eyebrow::before{background:var(--sand)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .why-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:26px}
+  .why-card .wi{width:48px;height:48px;border-radius:12px;background:rgba(62,142,90,.2);display:grid;place-items:center;color:var(--green-br);margin-bottom:16px}
+  .why-card .wi svg{width:26px;height:26px}
+  .why-card h3{font-size:1.18rem;color:#fff}
+  .why-card p{font-size:.95rem;color:#AFB5AB;margin-top:8px}
+  @media(max-width:820px){.why-grid{grid-template-columns:1fr}}
+
+  /* ---------- contact ---------- */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  .cinfo .eyebrow{color:var(--green-2)}
+  .cinfo h2{font-size:clamp(1.7rem,3.4vw,2.35rem);margin:14px 0 10px}
+  .cinfo>p{color:var(--ink-soft);margin-bottom:26px}
+  .clist{display:flex;flex-direction:column;gap:4px}
+  .crow{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:flex-start}
+  .crow .ic{width:42px;height:42px;border-radius:11px;background:var(--paper-2);display:grid;place-items:center;color:var(--green-2);flex:none}
+  .crow .ic svg{width:22px;height:22px}
+  .crow .lab{font-family:var(--font-d);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+  .crow .val{font-size:1.05rem;color:var(--ink);margin-top:2px}
+  .crow .note{font-size:.8rem;color:var(--sand);font-family:var(--font-d)}
+  form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-family:var(--font-d);font-weight:500;font-size:.9rem;margin-bottom:6px}
+  .field input,.field select,.field textarea{
+    width:100%;font-family:var(--font-b);font-size:1rem;padding:12px 14px;border-radius:10px;
+    border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);
+  }
+  .field textarea{resize:vertical;min-height:96px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green-br);box-shadow:0 0 0 3px rgba(62,142,90,.18)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form button{width:100%;justify-content:center;background:var(--green);color:#fff;margin-top:6px}
+  form button:hover{background:var(--green-2)}
+  .form-note{font-size:.82rem;color:var(--gray);margin-top:12px;text-align:center}
+  @media(max-width:820px){.contact-wrap{grid-template-columns:1fr;gap:30px}.row2{grid-template-columns:1fr}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--char-2);color:#B4BAB0;padding-block:44px 30px}
+  .foot-top{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand{max-width:340px}
+  .foot-brand .brand b{color:#fff}
+  .foot-brand p{font-size:.92rem;margin-top:12px;color:#9AA096}
+  .foot-links{display:flex;gap:44px;flex-wrap:wrap}
+  .foot-col h4{font-family:var(--font-d);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sand-soft);margin-bottom:12px}
+  .foot-col a{display:block;font-size:.94rem;padding:4px 0;color:#B4BAB0}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding-top:22px;font-size:.85rem;color:#7E847B}
+  .placeholder{color:var(--sand)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="อิฐ หิน ดิน ทราย หน้าแรก">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4.2 17.4 10.8H6.6L12 4.2Z" fill="#F0E8D4"/><rect x="4.3" y="12.2" width="15.4" height="2.3" rx="1.15" fill="#E4C98F"/><rect x="4.3" y="15.3" width="15.4" height="2.3" rx="1.15" fill="#CDAE72"/><rect x="4.3" y="18.4" width="15.4" height="2.3" rx="1.15" fill="#B08A50"/></svg>
+      </span>
+      <span><b>อิฐ หิน ดิน ทราย</b><span>IT HIN DIN SAI CO., LTD.</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="เมนู" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#business">ธุรกิจของเรา</a>
+      <a href="#materials">วัสดุก่อสร้าง</a>
+      <a href="#construction">งานก่อสร้าง</a>
+      <a href="#works">ผลงาน</a>
+      <a href="#why">จุดแข็ง</a>
+      <a class="nav-cta" href="#contact">ติดต่อเรา</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+        <g opacity="0.16" stroke="#EDEFE9" stroke-width="1" fill="none">
+          <path d="M-50 470 L300 300 L560 420 L860 250 L1250 400"/>
+          <path d="M-50 540 L360 380 L640 490 L940 330 L1250 470"/>
+        </g>
+        <g opacity="0.10" fill="#E4C98F">
+          <polygon points="120,470 220,470 170,400"/>
+          <polygon points="200,470 320,470 260,380"/>
+          <polygon points="980,420 1080,420 1030,350"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="eyebrow">วัสดุก่อสร้าง &amp; งานภาครัฐ</span>
+        <h1>รากฐานของงานก่อสร้าง<br>เริ่มต้นที่ <span class="accent">อิฐ หิน ดิน ทราย</span></h1>
+        <p class="hero-lead">ผู้จัดจำหน่ายวัสดุก่อสร้างคุณภาพ — อิฐ หิน ดิน ทราย และปูนซีเมนต์ พร้อมให้บริการรับเหมางานก่อสร้าง มุ่งเน้นงานราชการและโครงการภาครัฐ ด้วยความพร้อมด้านวัตถุดิบ เครื่องจักร และทีมงานมืออาชีพ</p>
+        <div class="hero-cta">
+          <a class="btn btn-p" href="#business">ดูวัสดุและบริการ
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-g" href="#contact">ติดต่อเรา</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats wrap" style="max-width:var(--maxw)">
+      <div class="st"><b>2</b><span>สายธุรกิจหลัก</span></div>
+      <div class="st"><b>10+</b><span>ชนิดวัสดุก่อสร้าง</span></div>
+      <div class="st"><b>ภาครัฐ</b><span>เชี่ยวชาญงานราชการ</span></div>
+      <div class="st"><b>ครบวงจร</b><span>ตั้งแต่วัตถุดิบถึงหน้างาน</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="band wrap">
+    <div class="about">
+      <div class="about-copy">
+        <span class="eyebrow">เกี่ยวกับเรา</span>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.5rem);margin:14px 0 18px">บริษัทวัสดุก่อสร้างและงานรับเหมา ที่เข้าใจงานตั้งแต่พื้นดินขึ้นมา</h2>
+        <p class="lead">บริษัท อิฐ หิน ดิน ทราย จำกัด ดำเนินธุรกิจจัดหาและจำหน่ายวัสดุก่อสร้าง ควบคู่กับการรับเหมาก่อสร้างงานสาธารณูปโภคและโครงการภาครัฐ</p>
+        <p style="margin-top:16px;color:var(--ink-soft)">เราเชื่อว่าคุณภาพของงานก่อสร้างเริ่มต้นจากวัตถุดิบที่ดี ด้วยเหตุนี้เราจึงควบคุมคุณภาพตั้งแต่แหล่งวัตถุดิบ การขนส่ง ไปจนถึงการดำเนินงานหน้างาน เพื่อให้ลูกค้าทั้งภาครัฐและเอกชนมั่นใจได้ในทุกโครงการ</p>
+        <p style="margin-top:14px;color:var(--ink-soft)">ด้วยความพร้อมด้านเครื่องจักร ยานพาหนะขนส่ง และทีมงานที่มีประสบการณ์ เราพร้อมรองรับงานตั้งแต่การส่งมอบวัสดุจำนวนมาก ไปจนถึงงานก่อสร้างที่ต้องการมาตรฐานและการส่งมอบตรงเวลา</p>
+      </div>
+      <div class="name-card">
+        <h3>ที่มาของชื่อบริษัท</h3>
+        <div class="en">IT&nbsp;·&nbsp;HIN&nbsp;·&nbsp;DIN&nbsp;·&nbsp;SAI</div>
+        <p style="font-size:.95rem;color:var(--ink-soft);margin-top:14px">ชื่อบริษัทสะท้อนหัวใจของธุรกิจ — วัตถุดิบพื้นฐานสี่อย่างที่เป็นรากฐานของงานก่อสร้างทุกประเภท</p>
+        <div class="decode">
+          <div><div class="th">อิฐ</div><div class="roman">IT</div><div class="mean">งานก่อ</div></div>
+          <div><div class="th">หิน</div><div class="roman">HIN</div><div class="mean">มวลรวม</div></div>
+          <div><div class="th">ดิน</div><div class="roman">DIN</div><div class="mean">งานถม</div></div>
+          <div><div class="th">ทราย</div><div class="roman">SAI</div><div class="mean">งานคอนกรีต</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS PILLARS -->
+  <section id="business" class="band" style="background:var(--paper-2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">ธุรกิจของเรา</span>
+        <h2>สองสายธุรกิจหลัก ที่เสริมกันอย่างครบวงจร</h2>
+        <p>ตั้งแต่การจัดหาวัตถุดิบ ไปจนถึงการก่อสร้าง เราให้บริการที่เชื่อมโยงกันเพื่อประสิทธิภาพและต้นทุนที่คุ้มค่าที่สุดสำหรับโครงการของคุณ</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar mat">
+          <div class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 20h18M5 20l7-13 7 13M9.5 13h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pnum">01 — SUPPLY</div>
+          <h3>จัดจำหน่ายวัสดุก่อสร้าง</h3>
+          <p>จำหน่ายและจัดส่งวัสดุก่อสร้างคุณภาพในปริมาณมาก ทั้งงานโครงการและงานทั่วไป พร้อมบริการขนส่งถึงหน้างาน</p>
+          <ul><li>อิฐ</li><li>ทราย</li><li>หิน / มวลรวม</li><li>ดิน / ลูกรัง</li><li>ปูนซีเมนต์</li></ul>
+        </div>
+        <div class="pillar con">
+          <div class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-5h4v5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pnum">02 — CONSTRUCTION</div>
+          <h3>รับเหมาก่อสร้างงานภาครัฐ</h3>
+          <p>รับเหมาก่อสร้างงานสาธารณูปโภคและโครงการราชการ ด้วยมาตรฐานงานและการบริหารโครงการที่ตรงเวลา</p>
+          <ul><li>งานถนน</li><li>งานระบายน้ำ</li><li>งานถมดิน</li><li>งานคอนกรีต</li><li>งานสาธารณูปโภค</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section id="materials" class="band wrap">
+    <div class="sec-head">
+      <span class="eyebrow">วัสดุก่อสร้าง</span>
+      <h2>วัสดุครบ จบในที่เดียว</h2>
+      <p>คัดสรรวัสดุคุณภาพ พร้อมจัดส่งตามปริมาณที่ต้องการ เหมาะสำหรับทั้งงานโครงสร้าง งานถม และงานคอนกรีต</p>
+    </div>
+    <div class="mat-grid">
+      <div class="mcard">
+        <div class="swatch sw-brick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 12h18M3 16h18M8 8v4M14 8v4M6 12v4M12 12v4M18 12v4" stroke-linecap="round"/></svg></div>
+        <div class="body">
+          <h3>อิฐ</h3><div class="en">BRICK</div>
+          <ul><li>อิฐมอญ / อิฐแดง</li><li>อิฐบล็อก / คอนกรีตบล็อก</li><li>อิฐมวลเบา</li></ul>
+        </div>
+      </div>
+      <div class="mcard">
+        <div class="swatch sw-sand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18c3-4 6-4 9 0s6 4 9 0M3 13c3-4 6-4 9 0" stroke-linecap="round"/></svg></div>
+        <div class="body">
+          <h3>ทราย</h3><div class="en">SAND</div>
+          <ul><li>ทรายหยาบ (งานคอนกรีต)</li><li>ทรายละเอียด (งานฉาบ)</li><li>ทรายถม</li></ul>
+        </div>
+      </div>
+      <div class="mcard">
+        <div class="swatch sw-rock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16 8 8l5 3 3-5 4 10H4Z" stroke-linejoin="round"/></svg></div>
+        <div class="body">
+          <h3>หิน</h3><div class="en">ROCK / AGGREGATE</div>
+          <ul><li>หิน 3/4" · หิน 3/8"</li><li>หินคลุก · หินฝุ่น</li><li>หินใหญ่ / หินเรียง</li></ul>
+        </div>
+      </div>
+      <div class="mcard">
+        <div class="swatch sw-soil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15h18M3 19h18M6 11l3-3 3 3 3-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="body">
+          <h3>ดิน</h3><div class="en">SOIL / LATERITE</div>
+          <ul><li>ดินถม / ดินปรับพื้นที่</li><li>ลูกรัง</li><li>หน้าดิน</li></ul>
+        </div>
+      </div>
+      <div class="mcard">
+        <div class="swatch sw-cement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8 12 4l7 4v8l-7 4-7-4V8Z" stroke-linejoin="round"/><path d="M5 8l7 4 7-4M12 12v8" stroke-linejoin="round"/></svg></div>
+        <div class="body">
+          <h3>ปูนซีเมนต์</h3><div class="en">CEMENT</div>
+          <ul><li>ปูนซีเมนต์ปอร์ตแลนด์</li><li>ปูนซีเมนต์ผสม</li><li>ปูนก่อ-ฉาบสำเร็จรูป</li></ul>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:24px;color:var(--ink-soft);font-size:.95rem">* มีวัสดุก่อสร้างอื่น ๆ เพิ่มเติม สอบถามรายการและราคาตามปริมาณสั่งซื้อได้ที่ฝ่ายขาย</p>
+  </section>
+
+  <!-- CONSTRUCTION -->
+  <section id="construction" class="band" style="background:var(--paper-2);border-block:1px solid var(--line)">
+    <div class="wrap con-wrap">
+      <div class="con-side">
+        <span class="eyebrow">งานก่อสร้าง</span>
+        <h2>รับเหมางานก่อสร้าง เชี่ยวชาญโครงการภาครัฐ</h2>
+        <p>เรารับเหมาก่อสร้างงานสาธารณูปโภคและงานราชการ ด้วยความเข้าใจในระเบียบการจัดซื้อจัดจ้างภาครัฐ มาตรฐานงาน และการส่งมอบตามกำหนด รองรับตั้งแต่งานขนาดกลางถึงงานโครงการ</p>
+      </div>
+      <div class="con-list">
+        <div class="con-item">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 18h18M6 18l2-9h8l2 9M9 9V6h6v3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>งานถนน</h4><p>ถนนคอนกรีต ถนนลาดยาง งานผิวจราจร</p>
+        </div>
+        <div class="con-item">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h16M4 8v8a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8M9 12c0 2 6 2 6 0" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>งานระบายน้ำ</h4><p>ท่อระบายน้ำ รางระบายน้ำ บ่อพัก</p>
+        </div>
+        <div class="con-item">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 20h18M4 20V12l8-5 8 5v8M9 20v-4h6v4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>งานถมดิน / ปรับพื้นที่</h4><p>ถมดิน บดอัด ปรับระดับพื้นที่โครงการ</p>
+        </div>
+        <div class="con-item">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 21V7l8-4 8 4v14M4 11h16M4 15h16M12 3v18" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>งานโครงสร้างคอนกรีต</h4><p>ฐานราก คาน เสา งานหล่อคอนกรีต</p>
+        </div>
+        <div class="con-item">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v4M5 8l3 2M19 8l-3 2M4 20h16M7 20l1-6h8l1 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>งานสาธารณูปโภค</h4><p>งานสาธารณูปโภคพื้นฐานในโครงการภาครัฐ</p>
+        </div>
+        <div class="con-item">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M6 21V8h5v13M15 21V4h3v17M6 12h5M6 16h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>งานอาคาร</h4><p>อาคารและสิ่งปลูกสร้างของหน่วยงานราชการ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS / GALLERY -->
+  <section id="works" class="band wrap">
+    <div class="sec-head">
+      <span class="eyebrow">ผลงานและการดำเนินงาน</span>
+      <h2>ภาพการดำเนินงานจริง</h2>
+      <p>ตั้งแต่แหล่งวัตถุดิบ การขนส่ง ไปจนถึงงานก่อสร้างหน้างาน</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="https://images.pexels.com/photos/188679/pexels-photo-188679.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="รถตักบรรจุวัสดุขึ้นรถบรรทุก" loading="lazy"><figcaption>ตักและลำเลียงวัสดุขึ้นรถบรรทุก</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/13224687/pexels-photo-13224687.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="รถบรรทุกขนส่งวัสดุจากแหล่งวัตถุดิบ" loading="lazy"><figcaption>ขนส่งวัสดุจากแหล่งวัตถุดิบ</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/27986719/pexels-photo-27986719.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="งานขุดและถมดินด้วยรถขุด" loading="lazy"><figcaption>งานขุด ถมดิน และปรับพื้นที่</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/19394246/pexels-photo-19394246.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="งานถนนและผิวจราจร" loading="lazy"><figcaption>งานถนนและผิวจราจร</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/4956918/pexels-photo-4956918.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="ทีมงานก่อสร้างงานโครงสร้าง" loading="lazy"><figcaption>งานโครงสร้างและระบบระบายน้ำ</figcaption></figure>
+      <figure><img src="https://images.pexels.com/photos/11160727/pexels-photo-11160727.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="กองวัสดุก่อสร้างพร้อมจัดส่ง" loading="lazy"><figcaption>กองวัสดุพร้อมจัดส่ง</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="band why">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">จุดแข็งของเรา</span>
+        <h2>ทำไมต้องเลือกทำงานกับเรา</h2>
+        <p>ความได้เปรียบของการเป็นทั้งผู้จัดหาวัตถุดิบและผู้รับเหมา ในบริษัทเดียว</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 17h2l2-6h10l2 6h2M7 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M8 11V6h6v5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>พร้อมด้านการขนส่ง</h3>
+          <p>ยานพาหนะและเครื่องจักรของบริษัท พร้อมจัดส่งวัสดุปริมาณมากถึงหน้างานตามกำหนด</p>
+        </div>
+        <div class="why-card">
+          <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>ควบคุมคุณภาพต้นทาง</h3>
+          <p>ดูแลคุณภาพวัสดุตั้งแต่แหล่งวัตถุดิบ ให้ได้มาตรฐานตรงตามข้อกำหนดของงาน</p>
+        </div>
+        <div class="why-card">
+          <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h9l3 3v15H6V3Z" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke-linecap="round"/></svg></div>
+          <h3>เข้าใจงานภาครัฐ</h3>
+          <p>คุ้นเคยกับระเบียบการจัดซื้อจัดจ้างและมาตรฐานเอกสารของโครงการราชการ</p>
+        </div>
+        <div class="why-card">
+          <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v4M12 2 8 5M12 2l4 3M4 9h16l-1 11H5L4 9ZM9 13v3M15 13v3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>ครบวงจรในที่เดียว</h3>
+          <p>ทั้งวัสดุและงานก่อสร้างจากผู้ให้บริการรายเดียว ลดขั้นตอนและประหยัดต้นทุน</p>
+        </div>
+        <div class="why-card">
+          <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 8v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>ส่งมอบตรงเวลา</h3>
+          <p>บริหารโครงการและการจัดส่งอย่างเป็นระบบ เพื่อการส่งมอบงานตามกำหนดเวลา</p>
+        </div>
+        <div class="why-card">
+          <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20a8 8 0 0 1 16 0M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>ทีมงานมืออาชีพ</h3>
+          <p>ทีมงานที่มีประสบการณ์ พร้อมให้คำปรึกษาและดูแลงานอย่างใกล้ชิด</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="band wrap">
+    <div class="contact-wrap">
+      <div class="cinfo">
+        <span class="eyebrow">ติดต่อเรา</span>
+        <h2>ติดต่อและสอบถามข้อมูล</h2>
+        <p>กรอกรายละเอียดหรือติดต่อเราตามช่องทางด้านล่าง ทีมงานพร้อมให้คำแนะนำเรื่องวัสดุและงานก่อสร้าง</p>
+        <div class="clist">
+          <div class="crow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3V6Z" stroke-linejoin="round"/><path d="m3 7 9 6 9-6" stroke-linejoin="round"/></svg></div>
+            <div><div class="lab">อีเมล</div><div class="val">info@ihds.com</div></div>
+          </div>
+          <div class="crow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div><div class="lab">ที่อยู่สำนักงาน</div><div class="val">บริษัท อิฐ หิน ดิน ทราย จำกัด<br>21/17 ซอยรามอินทรา 34 แยก 19<br>แขวงท่าแร้ง เขตบางเขน กรุงเทพฯ 10230</div></div>
+          </div>
+          <div class="crow">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 8v4l3 2M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="lab">เวลาทำการ</div><div class="val">จันทร์ – เสาร์ 08:00 – 17:00 น.</div></div>
+          </div>
+        </div>
+      </div>
+      <form id="quoteForm" novalidate>
+        <div class="row2">
+          <div class="field"><label for="fname">ชื่อ–นามสกุล / หน่วยงาน</label><input id="fname" name="fname" type="text" placeholder="ชื่อผู้ติดต่อ หรือชื่อหน่วยงาน"></div>
+          <div class="field"><label for="fphone">เบอร์โทรศัพท์</label><input id="fphone" name="fphone" type="tel" placeholder="0X-XXX-XXXX"></div>
+        </div>
+        <div class="field"><label for="femail">อีเมล</label><input id="femail" name="femail" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="ftype">เรื่องที่ต้องการติดต่อ</label>
+          <select id="ftype" name="ftype">
+            <option value="">— เลือกหัวข้อ —</option>
+            <option>สั่งซื้อวัสดุก่อสร้าง (ทราย / หิน / ดิน / ปูน)</option>
+            <option>ปรึกษางานรับเหมาก่อสร้าง</option>
+            <option>งานโครงการภาครัฐ</option>
+            <option>อื่น ๆ</option>
+          </select>
+        </div>
+        <div class="field"><label for="fmsg">รายละเอียด / ปริมาณที่ต้องการ</label><textarea id="fmsg" name="fmsg" placeholder="ระบุชนิดวัสดุ ปริมาณ พื้นที่จัดส่ง หรือรายละเอียดโครงการ"></textarea></div>
+        <button class="btn" type="submit">ส่งข้อมูล
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form-note" id="formNote">* แบบฟอร์มนี้เป็นตัวอย่าง — เชื่อมต่อระบบอีเมลหรือ LINE ของบริษัทเพื่อรับข้อมูลจริง</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand" style="align-items:center">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4.2 17.4 10.8H6.6L12 4.2Z" fill="#F0E8D4"/><rect x="4.3" y="12.2" width="15.4" height="2.3" rx="1.15" fill="#E4C98F"/><rect x="4.3" y="15.3" width="15.4" height="2.3" rx="1.15" fill="#CDAE72"/><rect x="4.3" y="18.4" width="15.4" height="2.3" rx="1.15" fill="#B08A50"/></svg></span>
+          <span><b style="font-family:var(--font-d);font-size:1.05rem">อิฐ หิน ดิน ทราย</b><span style="display:block;font-size:.72rem;color:#9AA096">IT HIN DIN SAI CO., LTD.</span></span>
+        </div>
+        <p>ผู้จัดจำหน่ายวัสดุก่อสร้างและผู้รับเหมางานภาครัฐ — อิฐ หิน ดิน ทราย ปูนซีเมนต์ และงานก่อสร้างสาธารณูปโภค</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>บริการ</h4>
+          <a href="#materials">วัสดุก่อสร้าง</a>
+          <a href="#construction">งานก่อสร้าง</a>
+          <a href="#business">งานภาครัฐ</a>
+        </div>
+        <div class="foot-col">
+          <h4>บริษัท</h4>
+          <a href="#about">เกี่ยวกับเรา</a>
+          <a href="#why">จุดแข็ง</a>
+          <a href="#contact">ติดต่อเรา</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2568 บริษัท อิฐ หิน ดิน ทราย จำกัด — สงวนลิขสิทธิ์</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+    function isMobile(){return window.matchMedia('(max-width:940px)').matches}
+    function setHidden(h){if(isMobile()){links.hidden=h}else{links.hidden=false}}
+    setHidden(true);
+    window.addEventListener('resize',function(){setHidden(links.hidden)});
+    btn.addEventListener('click',function(){
+      var open=links.hidden;links.hidden=!open;btn.setAttribute('aria-expanded',String(open));
+    });
+    links.addEventListener('click',function(e){
+      if(e.target.closest('a')&&isMobile()){links.hidden=true;btn.setAttribute('aria-expanded','false')}
+    });
+    var form=document.getElementById('quoteForm'),note=document.getElementById('formNote');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      note.textContent='ขอบคุณครับ/ค่ะ — นี่คือฟอร์มตัวอย่าง กรุณาเชื่อมต่อระบบรับข้อมูลจริงก่อนใช้งาน';
+      note.style.color='var(--green-2)';
+      form.reset();
+    });
+  })();
+</script>
+</body>
+</html>
